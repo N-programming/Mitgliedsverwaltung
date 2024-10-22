@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitgliederverwaltung</title>
+    <link rel="stylesheet" href="mitglieder.css">
+</head>
+<body>
+    <div class="head">
+        <!-- Button zurück zur Hauptseite -->
+    <button onclick="location.href='index.html'" style="background-color: transparent;" class="homepage-button">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="white" height="30px" width="30px" version="1.1" id="Capa_1" viewBox="0 0 26.676 26.676" xml:space="preserve" class="__web-inspector-hide-shortcut__">
+            <g>
+                <path d="M26.105,21.891c-0.229,0-0.439-0.131-0.529-0.346l0,0c-0.066-0.156-1.716-3.857-7.885-4.59   c-1.285-0.156-2.824-0.236-4.693-0.25v4.613c0,0.213-0.115,0.406-0.304,0.508c-0.188,0.098-0.413,0.084-0.588-0.033L0.254,13.815   C0.094,13.708,0,13.528,0,13.339c0-0.191,0.094-0.365,0.254-0.477l11.857-7.979c0.175-0.121,0.398-0.129,0.588-0.029   c0.19,0.102,0.303,0.295,0.303,0.502v4.293c2.578,0.336,13.674,2.33,13.674,11.674c0,0.271-0.191,0.508-0.459,0.562   C26.18,21.891,26.141,21.891,26.105,21.891z"/>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+            </g>
+            </svg>
+    </button>
+
+    <h1>Mitgliederliste</h1>
+    </div>
+
+    <!-- Button für neues Mitglied -->
+    <div class="content-container">
+    <div class="table-border">
+    <table id="mitgliederTabelle" class="mitgliederTabelle">
+        <thead>
+            <tr>
+                <th>Vorname</th>
+                <th>Name</th>
+                <!--<th>Geburtsdatum (Alter)</th>
+                <th>Wohnort</th>
+                <th>Eintrittsdatum</th> -->
+                <th class="aktionen">
+                    <div></div>
+                    Aktionen 
+                <div></div>
+                    <button id="neuesMitgliedButton" class="add-button">
+                    <?xml version="1.0" ?>
+                    <!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+                    <svg enable-background="new 0 0 512 512" height="20px" id="Layer_1" version="1.1" viewBox="0 0 512 512" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path d="M256,512C114.625,512,0,397.391,0,256C0,114.609,114.625,0,256,0c141.391,0,256,114.609,256,256  C512,397.391,397.391,512,256,512z M256,64C149.969,64,64,149.969,64,256s85.969,192,192,192c106.047,0,192-85.969,192-192  S362.047,64,256,64z M288,384h-64v-96h-96v-64h96v-96h64v96h96v64h-96V384z"/>
+                    </svg>
+                </button>
+            </th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+</div>
+    <!-- Pop-up für Neues Mitglied/Bearbeiten -->
+    <div id="mitgliedPopup" class="popup">
+        <div class="popup-content">
+            <div class="popup-head">
+                <h2 id="popupTitel">Mitglied hinzufügen</h2>
+                <span class="close" onclick="schliessePopup()">&times;</span>
+            </div>
+            <form id="mitgliedFormPopup">
+                <div class="outherPopupDiv">
+                    <div class="div div-links">
+                        <label for="vorname">Vorname:</label>
+                        <input type="text" id="vornamePopup" name="vorname" placeholder="Max" required>
+
+                        <label for="geburtsdatum">Geburtsdatum:</label>
+                        <input type="date" id="geburtsdatumPopup" name="geburtsdatum" required>
+
+                        <label for="hausnummer">Hausnummer:</label>
+                        <input type="text" id="hausnummerPopup" name="hausnummer" placeholder="1" required>
+
+                        <label for="ort">Ort:</label>
+                        <input type="text" id="ortPopup" name="ort" placeholder="Musterort" required>
+                    </div>
+                    <div class="div div-rechts">
+                        <label for="name">Name:</label>
+                        <input type="text" id="namePopup" name="name" placeholder="Mustername" required>
+
+                        <label for="strasse">Straße:</label>
+                        <input type="text" id="strassePopup" name="strasse" placeholder="Musterstraße" required>
+
+                        <label for="plz">PLZ:</label>
+                        <input type="text" id="plzPopup" name="plz" placeholder="12345" required>
+
+                        <label for="eintrittsdatum">Eintrittsdatum:</label>
+                        <input type="date" id="eintrittsdatumPopup" name="eintrittsdatum" required>
+                    </div>
+                </div>
+                    <button type="submit" class="small-button-erstellen speichern" id="popupSpeichern">
+                        Speichern
+                    </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Verlinkung zur JavaScript-Datei -->
+    <script src="mitglieder.js"></script>
+</body>
+</html>

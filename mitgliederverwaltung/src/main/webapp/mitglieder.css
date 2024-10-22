@@ -1,0 +1,149 @@
+@import url("styles.css");
+
+body{
+    overflow: auto;
+    width: 96vw;
+}
+
+/* Tabellenstil */
+.mitgliederTabelle {
+  width: 100%; /* Tabelle passt sich der Bildschirmbreite an */
+  border-collapse: collapse;
+  table-layout: auto; /* Automatische Anpassung der Zellenbreite */
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+  border-bottom: 1px solid black;
+
+}
+
+td {
+  border-bottom: 1px solid black;
+
+}
+
+thead {
+  width: 100%; /* Entferne diese Zeile, da die automatische Anpassung erfolgt */
+  background-color: #1c1f2b;
+}
+
+td button {
+    border-radius: 100px;
+    border: solid white 1px;
+    height: 38px;
+    width: 38px;
+    justify-content: center;
+    align-items: center;
+    fill: white;
+    background-color: transparent;
+
+}
+
+.mitglied-löschen{
+    background-color: transparent;
+    border: solid 1px red;
+    fill: red;
+    margin: 5px;
+}
+
+.mitglied-löschen:hover{
+  background-color: red;
+  fill: black;
+}
+
+.mitglied-bearbeiten{
+  background-color: transparent;
+  fill: white;
+  margin: 5px;
+}
+
+
+.mitglied-bearbeiten:hover{
+  background-color: white;
+  fill: black;
+}
+
+h1 {
+    top: 30px;
+    max-width: 100vw; /* Maximal so breit wie der Bildschirm */
+    white-space: nowrap; /* Verhindert, dass der Text umgebrochen wird */
+  }
+
+.table-border {
+  background: #1c1f2b;
+  position: relative;
+  color: white;
+  width: 100%; /* Breite anpassen, damit sie sich an die Bildschirmgröße anpasst */
+}
+  
+  @property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .table-border::after, .table-border::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), darkblue, aqua, darkblue, darkblue, darkblue, aqua, darkblue, darkblue);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 15s spin linear infinite;
+  }
+  .table-border::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+  }
+  @keyframes spin{
+    from{
+      --angle: 0deg;
+    }
+    to{
+      --angle: 360deg;
+    }
+  }
+
+  input{
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    fill: white;
+    justify-self: right;
+  }
+
+  .div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .div-rechts {
+    padding-left: auto;
+  }
+
+  .div input{
+    justify-self: space-between;
+    margin-bottom: 10px;
+  }
+
+  .div label{
+    font-weight: bold;
+  }
+
+  .aktionen{
+text-align: center;
+display: flex;
+justify-content: space-between;
+  }

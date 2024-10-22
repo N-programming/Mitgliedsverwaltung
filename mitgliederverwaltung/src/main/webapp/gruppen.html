@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gruppenverwaltung</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gruppen.css">
+
+    
+</head>
+<body>
+    <div class="head">
+            <!-- Button zurück zur Hauptseite -->
+        <button onclick="location.href='index.html'" style="background-color: transparent;" class="homepage-button">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="white" height="30px" width="30px" version="1.1" id="Capa_1" viewBox="0 0 26.676 26.676" xml:space="preserve" class="__web-inspector-hide-shortcut__">
+                <g>
+                    <path d="M26.105,21.891c-0.229,0-0.439-0.131-0.529-0.346l0,0c-0.066-0.156-1.716-3.857-7.885-4.59   c-1.285-0.156-2.824-0.236-4.693-0.25v4.613c0,0.213-0.115,0.406-0.304,0.508c-0.188,0.098-0.413,0.084-0.588-0.033L0.254,13.815   C0.094,13.708,0,13.528,0,13.339c0-0.191,0.094-0.365,0.254-0.477l11.857-7.979c0.175-0.121,0.398-0.129,0.588-0.029   c0.19,0.102,0.303,0.295,0.303,0.502v4.293c2.578,0.336,13.674,2.33,13.674,11.674c0,0.271-0.191,0.508-0.459,0.562   C26.18,21.891,26.141,21.891,26.105,21.891z"/>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                </g>
+            </svg>
+        </button>
+
+        <h1>Gruppenverwaltung</h1>
+    </div>
+    <!-- Gruppen -->
+    <div id="Gruppen" class="gruppen">
+        <div style="
+        justify-content: center;
+        display: flex;
+    ">
+        <div class="button-container">
+            <button id="neueGruppeButton" class="small-button">
+                Neue Gruppe
+            </button>
+        </div>
+    </div>
+        <!-- Container für Wettkampfgruppen -->
+        <h2 class="head2"><strong>Wettkampfgruppen</strong></h2>
+        <div id="wettkampfGruppenInhalt" class="gruppenInhalt">
+            
+            <!-- Wettkampfgruppen werden hier eingefügt -->
+        </div>
+        
+        <!-- Container für Normale Gruppen -->
+        <h2 class="head2"><strong>Standard-Gruppen</strong></h2>
+        <div id="normaleGruppenInhalt" class="gruppenInhalt">
+            
+            <!-- Normale Gruppen werden hier eingefügt -->
+        </div>
+    </div>
+
+    <!-- Pop-up für Gruppenverwaltung -->
+    <div id="gruppePopup" class="popup">
+        <div class="popup-content">
+            <div class="popup-head">
+                <h2 id="gruppePopupTitel" class="gruppePopupTitel">Gruppe erstellen</h2>
+                <span class="close" onclick="schliesseGruppePopup()">&times;</span>
+            </div>
+            <div class="outherPopupDiv">
+                <form id="gruppeFormPopup">
+                    <div class="gruppenSpecification">
+                        <div>
+                            <label for="gruppenName">Gruppenname:</label>
+                            <input type="text" id="gruppenName" name="gruppenName" placeholder="Mustergruppe" required>
+                        </div>
+                        <div>
+                            <label for="gruppenTyp">Gruppentyp:</label>
+                            <select id="gruppenTyp" name="gruppenTyp" placeholder="Bitte Wählen" required>
+                                <option value="normal">Standard-Gruppe</option>
+                                <option value="wettkampf">Wettkampfgruppe</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Container für die Mitgliederliste und Positionszuweisung -->
+                    <div id="mitgliederZuordnungContainer" class="mitgliederZuordnungContainer" style="display:none;">
+                        <h3>Mitglieder der Gruppe</h3>
+                        <div id="mitgliederZuweisen"></div>
+                    </div>
+
+                    <!-- Positionen für die Wettkampfgruppe -->
+                    <div id="positionenContainer" style="display:none;">
+                        <h3>Positionen für Wettkampfgruppe</h3>
+                        <div class="positionVerwaltung">
+                            <div>
+                                <label for="gruppenführer">Gruppenführer:</label>
+                                <select id="gruppenführer"></select>
+                            </div>
+                            <div>
+                                <label for="maschinist">Maschinist:</label>
+                                <select id="maschinist"></select>
+                            </div>
+                            <div>
+                                <label for="melder">Melder:</label>
+                                <select id="melder"></select>
+                            </div>
+                            <div>
+                                <label for="schlauchTruppFührer">Schlauchtrupp-Führer:</label>
+                                <select id="schlauchTruppFührer"></select>
+                            </div>
+                            <div>
+                                <label for="schlauchTruppMann">Schlauchtrupp-Mann:</label>
+                                <select id="schlauchTruppMann"></select>
+                            </div>
+                            <div>
+                                <label for="wasserTruppFührer">Wassertrupp-Führer:</label>
+                                <select id="wasserTruppFührer"></select>
+                            </div>
+                            <div>
+                                <label for="wasserTruppMann">Wassertrupp-Mann:</label>
+                                <select id="wasserTruppMann"></select>
+                            </div>
+                            <div>
+                                <label for="angriffsTruppFührer">Angriffstrupp-Führer:</label>
+                                <select id="angriffsTruppFührer"></select>
+                            </div>
+                            <div>
+                                <label for="angriffsTruppMann">Angriffstrupp-Mann:</label>
+                                <select id="angriffsTruppMann"></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="gruppeSpeichern" class="small-button-erstellen">Speichern</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="gruppen.js"></script>
+</body>
+</html>
