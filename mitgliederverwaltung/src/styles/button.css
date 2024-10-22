@@ -1,0 +1,83 @@
+.small-button {
+    min-width: 100px;
+    width: fit-content;
+    padding: 5px 15px;
+    background-color:var(--light-secondary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 25px;
+    margin: 0 3px;
+  }
+  
+  .small-button:hover {
+    background-color: var(--primary-color);
+    color:var(--light-secondary-color);
+    border: 1px solid var(--light-secondary-color);
+  }
+  
+  .small-button-delete {
+    min-width: 100px;
+    width: fit-content;
+    padding: 5px 15px;
+    background-color:var(--light-secondary-color);
+    color: var(--red);
+    border: 1px solid var(--red);
+    border-radius: 25px;
+    margin: 0 3px;
+  }
+  
+  .small-button-delete:hover {
+    background-color: var(--red);
+    color:var(--light-secondary-color);
+    border: 1px solid var(--light-secondary-color);
+  }
+  
+  .small-button-erstellen {
+    justify-content: center;
+    padding: 5px 15px;
+    background-color: var(--primary-color);
+    color: var(--light-secondary-color);
+    border: none;
+    border-radius: 25px;
+    margin-top: 13px;
+    display: flex;
+  }
+  
+  .small-button-erstellen:hover {
+    background-color: var(--green);
+    color:var(--primary-color);
+    border: 1px solid var(--primary-color);
+  }
+  
+  input, select {
+    padding-left: 8px !important;
+  }
+  
+  .button-container{
+    display: flex;
+    height: 25px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+  }
+  
+  .bearbeitenUndLöschen{
+    padding-bottom: 20px;
+    text-align: right;
+    width: 80vw;
+  }
+
+
+.homepage-button{
+    background-color: transparent;
+    border: transparent;
+}
+
+.speichern-icon:hover path {
+    fill: var(--green);
+}
+
+.speichern-icon{
+    border: 5px solid var(--red);
+    
+}

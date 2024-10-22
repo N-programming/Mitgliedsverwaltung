@@ -1,10 +1,5 @@
 @import url("styles.css");
 
-body{
-    overflow: auto;
-    width: 96vw;
-}
-
 /* Tabellenstil */
 .mitgliederTabelle {
   width: 100%; /* Tabelle passt sich der Bildschirmbreite an */
@@ -14,58 +9,58 @@ body{
 
 th, td {
     padding: 8px;
-    text-align: left;
+    text-align: center;
 }
 
 th {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--secondary-color);
 
 }
 
 td {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--secondary-color);
 
 }
 
 thead {
   width: 100%; /* Entferne diese Zeile, da die automatische Anpassung erfolgt */
-  background-color: #1c1f2b;
+  background-color: var(--light-secondary-color);
 }
 
 td button {
     border-radius: 100px;
-    border: solid white 1px;
+    border: solid var(--primary-color) 1px;
     height: 38px;
     width: 38px;
     justify-content: center;
     align-items: center;
-    fill: white;
+    fill: var(--primary-color);
     background-color: transparent;
 
 }
 
 .mitglied-löschen{
     background-color: transparent;
-    border: solid 1px red;
-    fill: red;
+    border: solid 1px var(--red);
+    fill: var(--red);
     margin: 5px;
 }
 
 .mitglied-löschen:hover{
-  background-color: red;
-  fill: black;
+  background-color: var(--red);
+  fill: var(--secondary-color);
 }
 
 .mitglied-bearbeiten{
   background-color: transparent;
-  fill: white;
+  fill: var(--primary-color);
   margin: 5px;
 }
 
 
 .mitglied-bearbeiten:hover{
-  background-color: white;
-  fill: black;
+  background-color: var(--primary-color);
+  fill: var(--secondary-color);
 }
 
 h1 {
@@ -75,9 +70,9 @@ h1 {
   }
 
 .table-border {
-  background: #1c1f2b;
+  background: var(--light-secondary-color);
   position: relative;
-  color: white;
+  color: var(--primary-color);
   width: 100%; /* Breite anpassen, damit sie sich an die Bildschirmgröße anpasst */
 }
   
@@ -116,9 +111,9 @@ h1 {
 
   input{
     background-color: transparent;
-    color: white;
-    border: 1px solid white;
-    fill: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    fill: var(--primary-color);
     justify-self: right;
   }
 
@@ -147,3 +142,13 @@ text-align: center;
 display: flex;
 justify-content: space-between;
   }
+
+
+  .add-button {
+    background-color: transparent;
+    fill: var(--primary-color);
+    border: transparent;
+    color: var(--primary-color);
+    align-self: start;
+    
+}

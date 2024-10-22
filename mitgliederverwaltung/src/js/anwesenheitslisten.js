@@ -101,6 +101,7 @@ function zeigeAlleAnwesenheitslisten() {
     
     anwesenheitslisten.forEach((liste, index) => {
         const div = document.createElement('div');
+        div.classList.add('attendance');
         div.innerHTML = `
             <h3 onclick="toggleAnwesenheitsDetails(${index})">
                 Anwesenheitsliste vom ${liste.datum} – Aktivität: ${liste.aktivitaet || "Noch nicht ausgewählt"} ${"(" + liste.dauer + " Std.)"}
@@ -124,7 +125,7 @@ function zeigeAlleAnwesenheitslisten() {
                         ${dauerOptionen.map((dauer) => `<option value="${dauer}" ${liste.dauer === dauer ? 'selected' : ''}>${dauer}</option>`).join('')}
                     </select>
                 </div>
-                <h3>Mitglieder</h3>
+                <h4 style="margin-bottom: 15px;">Mitglieder</h4>
                 <div id="anwesenheitslisteEintraege-${index}" class="anwesenheitslisteEintraege"></div>
                 <div class="bearbeitenUndLöschen">
                     <button id="bearbeiten-${index}" onclick="bearbeiteAnwesenheitsliste(${index})" class="small-button">Bearbeiten</button>

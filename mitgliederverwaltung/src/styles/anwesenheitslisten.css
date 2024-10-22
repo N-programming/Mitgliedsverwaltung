@@ -1,12 +1,33 @@
 @import url("styles.css");
 
 body {
-    width: 85vw;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
+    padding: 0 20px;
 }
+
+.aktivitätenliste{
+    padding-left: 0;
+}
+
+.aktivitätenliste li{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--secondary-color);
+    padding: 10px 0;
+}
+
+.aktivitätenliste .small-button-delete{
+ margin-right: 0;
+}
+
+body select, body input{
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 25px;
+    padding: 1px 2px;
+}
+
+/* Popup */
 .underheader-container{
     display: flex;
     flex-direction: row;
@@ -19,30 +40,6 @@ body {
  height: 20px; 
  width: 55%;
  
-}
-
-
-.aktivitätenliste{
-    padding-left: 0;
-}
-
-.aktivitätenliste li{
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid black;
-    padding: 10px 0;
-}
-
-.aktivitätenliste .small-button-delete{
- margin-right: 0;
-}
-
-body select, body input{
-    background-color: transparent;
-    color: white;
-    border: 1px solid white;
-    border-radius: 25px;
-    padding: 1px 2px;
 }
 
 .aktivitätUndDauer {
@@ -63,8 +60,4 @@ body select, body input{
     flex-direction: row;
     width: 50vw;
     height: fit-content;
-}
-
-#anwesenheitslisteInhalt div{
-    border-bottom: 1px solid #1c1f2b;
 }

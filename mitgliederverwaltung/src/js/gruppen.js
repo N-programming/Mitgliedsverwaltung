@@ -267,12 +267,14 @@ function zeigePositionen(positionen) {
     return `
         <div class="mitglieder-positionen">
             <h3>Positionen</h3>
-            <p><strong>Gruppenführer:</strong> ${positionen.gruppenführer || "Nicht Ausgewählt"}</p>
-            <p><strong>Maschinist:</strong> ${positionen.maschinist || "Nicht Ausgewählt"}</p>
-            <p><strong>Melder:</strong> ${positionen.melder || "Nicht Ausgewählt"}</p>
-            <p><strong>Schlauchtrupp:</strong><br> <small>Führer:</small> ${positionen.schlauchTruppFührer || "Nicht Ausgewählt"};<br> <small>Mann:</small> ${positionen.schlauchTruppMann || "Nicht Ausgewählt"}</p>
-            <p><strong>Wassertrupp:</strong><br> <small>Führer:</small> ${positionen.wasserTruppFührer || "Nicht Ausgewählt"};<br> <small>Mann:</small> ${positionen.wasserTruppMann || "Nicht Ausgewählt"}</p>
-            <p><strong>Angriffstrupp:</strong><br> <small>Führer:</small> ${positionen.angriffsTruppFührer || "Nicht Ausgewählt"};<br> <small>Mann:</small> ${positionen.angriffsTruppMann || "Nicht Ausgewählt"}</p>
+            <ul>
+                <li><strong>Gruppenführer:</strong> ${positionen.gruppenführer || "Nicht Ausgewählt"}</li>
+                <li><strong>Maschinist:</strong> ${positionen.maschinist || "Nicht Ausgewählt"}</li>
+                <li><strong>Melder:</strong> ${positionen.melder || "Nicht Ausgewählt"}</li>
+                <li><strong>Schlauchtrupp:</strong><br> <small>Führer:</small> ${positionen.schlauchTruppFührer || "Nicht Ausgewählt"};<br> <small>Mann:</small> ${positionen.schlauchTruppMann || "Nicht Ausgewählt"}</li>
+                <li><strong>Wassertrupp:</strong><br> <small>Führer:</small> ${positionen.wasserTruppFührer || "Nicht Ausgewählt"};<br> <small>Mann:</small> ${positionen.wasserTruppMann || "Nicht Ausgewählt"}</li>
+                <li><strong>Angriffstrupp:</strong><br> <small>Führer:</small> ${positionen.angriffsTruppFührer || "Nicht Ausgewählt"};<br> <small>Mann:</small> ${positionen.angriffsTruppMann || "Nicht Ausgewählt"}</li>
+            </ul>
         </div>
     `;
 }

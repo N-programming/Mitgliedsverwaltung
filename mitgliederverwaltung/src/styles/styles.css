@@ -1,248 +1,67 @@
 :root{
-    --primary-color: cadetblue;
-    --primary-hover: darkcyan;
-    --secondary-color: lightgray;
-    --other-blue-color: aqua;
+  --primary-color: white;
+  --secondary-color: slategray;
+  --light-secondary-color: #1c1f2b;
+  --red: red;
+  --green: green;
 }
 
+
 /* Allgemeine Stile */
+body {
+  font-family: 'Bebas Neue', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 100vh;
+  padding: 0 30px;
+  margin: 0;
+  position: relative;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../bilder/polygonal-hintergrund-design_1164-112.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1; /* Damit das Hintergrundbild hinter dem Inhalt bleibt */
+}
+
+body::before {
+  transform: rotate(0deg); /* Normal */
+}
+
+body::after {
+  transform: rotate(180deg); /* Um 180° gedreht */
+  top: 100%; /* Damit es unter dem ersten Bild positioniert ist */
+}
+
+
 .head {
-    display: flex;
-    justify-content: center;  /* Zentriert das h1 */
-    align-items: center;      /* Vertikal zentriert */
-    position: relative;       /* Ermöglicht die Verwendung von absoluten Positionen */
-    width: 100%;              /* Nutzt die volle Breite des Containers */
-    font-size: 3vw;
-    text-shadow: 1px 1px 0px crimson, -1px -1px 0px red, 1px -1px 0px orangered, -1px 1px 0px crimson;
-    color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;       
+  width: 100%;             
+  font-size: 3vw;
+  color: var(--primary-color);
 }
 
 .head button {
-    position: absolute;
-    left: 10px;                 /* Setzt den Button ganz nach links */
+  position: absolute;
+  left: 10px;
 }
 
-.head h1 {
-    text-align: center;       /* Zentriert den Text innerhalb des h1-Elements */
+.head2 {
+  text-align: center;
+  color: var(--primary-color);
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color:black ;
-    color: white;
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-
-h1, h2 {
-    text-align: center;
-}
-
-/* Pop-up Styles */
-.popup {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-}
-
-.popup-content {
-    margin: 15% auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 500px;
-    background: #1c1f2b;
-    position: relative;
-    color: white;
-}
-
-.popup-content input, .popup-content select{
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  border-radius: 25px;
-  padding: 1px 2px;
-}
-
-@property --angle{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-  }
-  
-  .popup-content::after, .popup-content::before{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: conic-gradient(from var(--angle), darkblue, aqua, darkblue, darkblue, darkblue, aqua, darkblue, darkblue);
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-    padding: 3px;
-    border-radius: 10px;
-    animation: 3s spin linear infinite;
-  }
-  .popup-content::before{
-    filter: blur(1.5rem);
-    opacity: 0.5;
-  }
-  @keyframes spin{
-    from{
-      --angle: 0deg;
-    }
-    to{
-      --angle: 360deg;
-    }
-  }
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover, .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.gruppePopupTitel {
-  color: white;
-}
-
-.homepage-button{
-    background-color: transparent;
-    border: transparent;
-}
-
-.add-button {
-    background-color: transparent;
-    fill: white;
-    border: transparent;
-    color: white;
-    align-self: start;
-    
-}
-
-.popup-head h2 {
-  color: white;
-}
-
-.close {
-    display: block;
-    top: 2px;
-    right: 2px;
-    height: 32px;
-    color: white;
-    justify-self: right;
-    align-self: top;
-  }
-
-.close:focus, .close:hover{
-    color: red;
-}
-
-.popup-head {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left: auto;
-    align-items: center;
-  }
-
-.outherPopupDiv {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left: auto;
-    
-  }
-
-.speichern-icon:hover path {
-    fill: green;
-}
-
-.speichern-icon{
-    border: 5px solid red;
-    
-}
-
-
-
-.small-button {
-  min-width: 100px;
-  width: fit-content;
-  padding: 5px 15px;
-  background-color:#1c1f2b;
-  color: white;
-  border: 1px solid white;
-  border-radius: 25px;
-  margin: 0 3px;
-}
-
-.small-button:hover {
-  background-color: white;
-  color:#1c1f2b;
-  border: 1px solid #1c1f2b;
-}
-
-.small-button-delete {
-  min-width: 100px;
-  width: fit-content;
-  padding: 5px 15px;
-  background-color:#1c1f2b;
-  color: red;
-  border: 1px solid red;
-  border-radius: 25px;
-  margin: 0 3px;
-}
-
-.small-button-delete:hover {
-  background-color: red;
-  color:#1c1f2b;
-  border: 1px solid #1c1f2b;
-}
-
-.small-button-erstellen {
-  justify-content: center;
-  padding: 5px 15px;
-  background-color: white;
-  color: #1c1f2b;
-  border: none;
-  border-radius: 25px;
-  margin-top: 13px;
-  margin-left: auto;
-  display: flex;
-}
-
-.small-button-erstellen:hover {
-  background-color: green;
-  color:white;
-  border: 1px solid white;
-}
-
-input, select {
-  padding-left: 8px !important;
-}
-
-.button-container{
-  width: 85vw;
-  display: flex;
-  flex-direction: row;
-}
-
-.bearbeitenUndLöschen{
-  padding-bottom: 20px;
-  text-align: right;
-  width: 80vw;
-}

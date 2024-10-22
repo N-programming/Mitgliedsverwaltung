@@ -1,0 +1,113 @@
+/* Pop-up Styles */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--primary-color);
+}
+
+.popup-content {
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    background: var(--light-secondary-color);
+    position: relative;
+    color: var(--primary-color);
+}
+
+.popup-content input, .popup-content select{
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 25px;
+  padding: 1px 2px;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+  
+.popup-content::after, .popup-content::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), darkblue, aqua, darkblue, darkblue, darkblue, aqua, darkblue, darkblue);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+.popup-content::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-head h2 {
+  color: var(--primary-color);
+}
+
+.close {
+    display: block;
+    top: 2px;
+    right: 2px;
+    height: 32px;
+    color: var(--primary-color);
+    justify-self: right;
+    align-self: top;
+}
+
+.close:focus, .close:hover{
+    color: var(--red);
+}
+
+.popup-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: auto;
+    align-items: center;
+}
+
+.outherPopupDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: auto;   
+}
+
+

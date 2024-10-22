@@ -2,20 +2,18 @@
 
 body{
     overflow: scroll;
+    
 }
 
 .head{
     text-shadow: none;
 }
 
-.head2{
-    color: white;
-}
-
 .mitglieder-positionen{
     display: flex;
     flex-direction: column;
     padding: 20px 0;
+    padding-left: 20px;
 }
 
 .mitglieder-positionen h3{
@@ -33,19 +31,17 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: left;
 }
 
 .gruppenName {
-    color: white;
+    color: var(--primary-color);
     width: auto;
     justify-content: left;
     align-items: center;
     margin: 0;
     display: flex;
     position: relative;
-    margin-bottom: 10px;
     min-width: 100px;
 }
 
@@ -55,8 +51,10 @@ h3 {
 
 .gruppenMitglieder {
     text-align: left;
-    color: white;
+    color: var(--primary-color);
     padding: 20px 0;
+    padding-left: 20px;
+
 }
 
 .gruppenMitglieder h3 {
@@ -73,8 +71,6 @@ h3 {
 }
 
 .gruppenContainer {
-    width: 85vw;
-    border-top: 1px solid #1c1f2b;
     display: flex;
     flex-direction: column;
     padding: 10px 0;
@@ -90,34 +86,6 @@ h3 {
 #positionenContainer h3 {
     margin-bottom: 10px;
     background-color: transparent;
-}
-
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 15vh;
-}
-
-.heading-left{
-    position: relative;
-    left: 130%;
-    top: 20px;
-}
-
-.heading-right{
-    position: relative;
-    left: 345%;
-    top: 20px;
-}
-
-.head {
-    display: flex;
-    justify-content: center;  /* Zentriert das h1 */
-    align-items: center;      /* Vertikal zentriert */
-    position: relative;       /* Ermöglicht die Verwendung von absoluten Positionen */
-    width: 100%;              /* Nutzt die volle Breite des Containers */    
-    text-shadow: 1px 1px 0px crimson, -1px -1px 0px red, 1px -1px 0px orangered, -1px 1px 0px crimson;
 }
 
 .mitgliederZuordnungContainer {
@@ -140,7 +108,7 @@ h3 {
     flex-direction: row;
     justify-content: space-between;
     padding: 2px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--secondary-color);
 }
 
 .gruppenSpecification div{
