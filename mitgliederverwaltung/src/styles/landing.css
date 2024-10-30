@@ -3,7 +3,7 @@
 .landing-content{
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 65vh;
 }
 
 .c-landing-card{
